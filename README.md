@@ -1,20 +1,20 @@
 
-* Introduction
+# Introduction
 
 This package provides a major mode to edit vCard files in Emacs.
 
-* Installation
+# Installation
 
-Put =vcard-mode.el= under your load path.  Then add the following to
-your =.emacs= file:
+Put `vcard-mode.el` under your load path.  Then add the following to
+your `.emacs` file:
 
-#+begin_src emacs-lisp
+``` elisp
 (require 'vcard-mode)
-#+end_src
+```
 
 Or if you don't want to load it until editing a vCard file:
 
-#+begin_src emacs-lisp
+``` elisp
 (autoload 'vcard-mode "vcard-mode" "Major mode for vCard files" t)
 (add-to-list 'auto-mode-alist '("\\.vc\\(f\\|ard\\)\\'" . vcard-mode))
-#+end_src
+```
