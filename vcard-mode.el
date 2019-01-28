@@ -37,13 +37,17 @@
 
 (require 'generic)
 
+(defun vcard-mode-init ()
+  (set (make-local-variable 'paragraph-start) "BEGIN:VCARD"))
+
 ;;;###autoload
 (define-generic-mode vcard-mode
   '()
   nil
-  '(("^\\([^:\n]+\\):" 1 font-lock-keyword-face))
+  '(("^BEGIN:VCARD" . font-lock-function-name-face)
+    ("^\\([^:\n]+\\):" 1 font-lock-keyword-face))
   '("\\.vc\\(f\\|ard\\)\\'")
-  nil
+  '(vcard-mode-init)
   "Generic mode for vCard files.")
 
 (provide 'vcard-mode)
