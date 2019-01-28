@@ -45,8 +45,9 @@
   '()
   nil
   '(("^BEGIN:VCARD" . font-lock-function-name-face)
-    ("^\\([^:\n]+\\):" 1 font-lock-keyword-face))
-  '("\\.vc\\(f\\|ard\\)\\'")
+    (";[^:\n]+:" . font-lock-type-face)
+    ("^\\([^;:\n]+\\):?" . font-lock-keyword-face))
+  '("\\.\\(vcf\\|vcard\\)\\'")
   '(vcard-mode-init)
   "Generic mode for vCard files.")
 
